@@ -12,7 +12,7 @@ public class FloydWarShallTest {
    @Test
     public void simpleTest() throws IOException {
     
-        String filePath = "C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\ShortestPathAlgorithms'\\resources\\simpleTest.txt"; 
+        String filePath = "ShortestPathAlgorithms'\\resources\\simpleTest.txt"; 
         Graph graph = new Graph(filePath);
 
       
@@ -31,7 +31,7 @@ public class FloydWarShallTest {
     @Test
     public void mediumTestHighDensity() throws IOException {
     
-        String filePath = "C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\ShortestPathAlgorithms'\\resources\\mediumTestHighDensity.txt"; 
+        String filePath = "ShortestPathAlgorithms'\\resources\\mediumTestHighDensity.txt"; 
         Graph graph = new Graph(filePath);
 
       
@@ -50,7 +50,7 @@ public class FloydWarShallTest {
     @Test
     public void noPathMediumTestHighDensity() throws IOException {
     
-        String filePath = "C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\ShortestPathAlgorithms'\\resources\\mediumTestHighDensity.txt"; 
+        String filePath = "ShortestPathAlgorithms'\\resources\\mediumTestHighDensity.txt"; 
         Graph graph = new Graph(filePath);
 
       
@@ -69,7 +69,7 @@ public class FloydWarShallTest {
     @Test
     public void BigTestHighDensity1() throws IOException {
     
-        String filePath = "C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\ShortestPathAlgorithms'\\resources\\BigTestHighDensity.txt"; 
+        String filePath = "ShortestPathAlgorithms'\\resources\\BigTestHighDensity.txt"; 
         Graph graph = new Graph(filePath);
 
       
@@ -92,7 +92,7 @@ public class FloydWarShallTest {
     @Test
     public void BigTestHighDensity2() throws IOException {
     
-        String filePath = "C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\ShortestPathAlgorithms'\\resources\\BigTestHighDensity.txt"; 
+        String filePath = "ShortestPathAlgorithms'\\resources\\BigTestHighDensity.txt"; 
         Graph graph = new Graph(filePath);
 
       
@@ -114,7 +114,7 @@ public class FloydWarShallTest {
     @Test
     public void testEqualShortestPathsWithNegativeValues() throws IOException {
     
-        String filePath = "C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\ShortestPathAlgorithms'\\resources\\equalShortestPathsNegative.txt"; 
+        String filePath = "ShortestPathAlgorithms'\\resources\\equalShortestPathsNegative.txt"; 
         Graph graph = new Graph(filePath);
 
       
@@ -133,7 +133,7 @@ public class FloydWarShallTest {
     @Test
     public void testEqualShortestPathsWithPositiveValues() throws IOException {
     
-        String filePath = "C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\ShortestPathAlgorithms'\\resources\\equalShortestPathsPositive.txt"; 
+        String filePath = "ShortestPathAlgorithms'\\resources\\equalShortestPathsPositive.txt"; 
         Graph graph = new Graph(filePath);
 
       
@@ -153,7 +153,7 @@ public class FloydWarShallTest {
     @Test
     public void oneNode() throws IOException {
     
-        String filePath = "C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\ShortestPathAlgorithms'\\resources\\oneNode.txt"; 
+        String filePath = "ShortestPathAlgorithms'\\resources\\oneNode.txt"; 
         Graph graph = new Graph(filePath);
 
       
@@ -174,7 +174,7 @@ public class FloydWarShallTest {
     @Test
     public void GiganticPathOneHighDensity() throws IOException {
     
-        String filePath = "C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\ShortestPathAlgorithms'\\resources\\GiganticPathOneHighDensity.txt"; 
+        String filePath = "ShortestPathAlgorithms'\\resources\\GiganticPathOneHighDensity.txt"; 
         Graph graph = new Graph(filePath);
 
       
