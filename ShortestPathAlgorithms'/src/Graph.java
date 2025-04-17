@@ -156,7 +156,7 @@ public class Graph {
         for (int i = 0; i < V; i++) {
             for (int j = 0; j < V; j++) {
                 if (dist[i][j] == Integer.MAX_VALUE) {
-                    costs[i][j] = 99999;
+                    costs[i][j] = Integer.MAX_VALUE;
                 } else {
                     costs[i][j] = dist[i][j];
                 }
@@ -185,5 +185,40 @@ public class Graph {
     }
     public List<Vertex> getVertices() {
         return vertices;
+    }
+
+    public List<Integer> getPath(int source, int destination, int[] parents) {
+        List<Integer> path = new ArrayList<>();
+        int current = destination;
+
+        while (current != -1) {
+            path.add(0, current); 
+            if (current == source) {
+                break; 
+            }
+            current = parents[current]; 
+        }
+
+        if (path.get(0) != source) {
+            return Collections.emptyList(); 
+        }
+
+        return path;
+    }
+
+    public List<Integer> getFloydWarshallPath(int source, int destination, int[][] parents) {
+        List<Integer> path = new ArrayList<>();
+        if (parents[source][destination] == -1) {
+            return path; 
+        }
+
+        int current = destination;
+        while (current != source) {
+            path.add(0, current);
+            current = parents[source][current]; 
+        }
+        path.add(0, source); 
+
+        return path;
     }
 }
