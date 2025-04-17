@@ -44,7 +44,7 @@ public class ComparisonAllPaths {
         graphGenerator(10, 10);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -63,7 +63,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -82,7 +82,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -99,7 +99,7 @@ public class ComparisonAllPaths {
         graphGenerator(10, 100);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -118,7 +118,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -137,7 +137,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -153,7 +153,7 @@ public class ComparisonAllPaths {
         graphGenerator(10, 1000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -172,7 +172,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -191,7 +191,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -207,7 +207,7 @@ public class ComparisonAllPaths {
         graphGenerator(10, 10000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -226,7 +226,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -245,7 +245,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -261,7 +261,7 @@ public class ComparisonAllPaths {
         graphGenerator(10, 100000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -280,7 +280,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -299,7 +299,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -320,7 +320,7 @@ public class ComparisonAllPaths {
         graphGenerator(100, 10);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -339,7 +339,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -358,7 +358,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -374,7 +374,7 @@ public class ComparisonAllPaths {
         graphGenerator(100, 100);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -393,7 +393,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -412,7 +412,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -428,7 +428,7 @@ public class ComparisonAllPaths {
         graphGenerator(100, 1000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -447,7 +447,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -466,7 +466,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -482,7 +482,7 @@ public class ComparisonAllPaths {
         graphGenerator(100, 10000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -501,7 +501,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -520,7 +520,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -536,7 +536,7 @@ public class ComparisonAllPaths {
         graphGenerator(100, 100000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -555,7 +555,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -574,7 +574,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -593,7 +593,7 @@ public class ComparisonAllPaths {
         graphGenerator(1000, 100);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -612,7 +612,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -631,7 +631,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -647,7 +647,7 @@ public class ComparisonAllPaths {
         graphGenerator(1000, 1000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -666,7 +666,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -685,7 +685,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -701,7 +701,7 @@ public class ComparisonAllPaths {
         graphGenerator(1000, 10000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -720,7 +720,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -739,7 +739,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -755,7 +755,7 @@ public class ComparisonAllPaths {
         graphGenerator(1000, 100000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -774,7 +774,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -793,7 +793,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
@@ -809,7 +809,7 @@ public class ComparisonAllPaths {
         graphGenerator(1000, 1000000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -828,7 +828,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");
+            Graph graph = new Graph("temp.txt");
      
             for (int j = 0; j < graph.Size(); j++) {
                 int[] singleParents = new int[graph.Size()];
@@ -847,7 +847,7 @@ public class ComparisonAllPaths {
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
-            Graph graph = new Graph("C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\temp.txt");     
+            Graph graph = new Graph("temp.txt");     
             graph.FloydWarshall(parents, costs);       
             end = System.nanoTime();
             avg += (end-start)/1000;
