@@ -114,7 +114,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 10 nodes and 100 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -133,7 +133,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 10 nodes and 100 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -142,7 +142,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 10 nodes and 100 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
     @Test
     public void test_10_1000() throws IOException {
@@ -168,7 +168,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 10 nodes and 1000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -187,7 +187,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 10 nodes and 1000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -196,7 +196,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 10 nodes and 1000 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
     @Test
     public void test_10_10000() throws IOException {
@@ -222,7 +222,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 10 nodes and 10000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -241,7 +241,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 10 nodes and 10000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -250,7 +250,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 10 nodes and 10000 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
     @Test
     public void test_10_100000() throws IOException {
@@ -276,7 +276,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 10 nodes and 100000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -295,7 +295,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 10 nodes and 100000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -304,7 +304,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 10 nodes and 100000 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
 
 
@@ -335,7 +335,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -354,7 +354,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -363,7 +363,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
     @Test
     public void test_100_100() throws IOException {
@@ -389,7 +389,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 100 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -408,7 +408,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 100 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -417,7 +417,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 100 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
     @Test
     public void test_100_1000() throws IOException {
@@ -443,7 +443,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 1000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -462,7 +462,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 1000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -471,7 +471,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 1000 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
     @Test
     public void test_100_10000() throws IOException {
@@ -497,7 +497,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 10000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -516,7 +516,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 10000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -525,7 +525,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 10000 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
     @Test
     public void test_100_100000() throws IOException {
@@ -551,7 +551,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 100000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -570,7 +570,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 100000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -579,7 +579,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 100 nodes and 10000 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
 
                                                     /*1,000 nodes*/
@@ -608,7 +608,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 100 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -627,7 +627,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 100 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -636,7 +636,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 100 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
     @Test
     public void test_1000_1000() throws IOException {
@@ -662,7 +662,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 1000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -681,7 +681,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 1000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -690,7 +690,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 1000 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
     @Test
     public void test_1000_10000() throws IOException {
@@ -716,7 +716,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 10000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -735,7 +735,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 10000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -744,7 +744,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 10000 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
     @Test
     public void test_1000_100000() throws IOException {
@@ -770,7 +770,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 100000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -789,7 +789,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 100000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -798,7 +798,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 100000 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
     @Test
     public void test_1000_1000000() throws IOException {
@@ -824,7 +824,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 1000000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -843,7 +843,7 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }   
-        System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 1000000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
@@ -852,6 +852,6 @@ public class ComparisonAllPaths {
             end = System.nanoTime();
             avg += (end-start)/1000;
         }
-        System.out.println("Average time for 10 nodes and 10 edges by Floyed Warshall: " + avg/10 + " microseconds");
+        System.out.println("Average time for 1000 nodes and 1000000 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
 }
