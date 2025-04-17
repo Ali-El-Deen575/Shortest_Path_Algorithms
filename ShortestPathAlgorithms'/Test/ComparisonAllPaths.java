@@ -854,4 +854,93 @@ public class ComparisonAllPaths {
         }
         System.out.println("Average time for 1000 nodes and 1000000 edges by Floyed Warshall: " + avg/10 + " microseconds");
     }
+    @Test
+public void test_multiple_combinations() throws IOException {
+    int[][] testCases = {
+        {5, 5},
+        {10, 10},
+        {15, 20},
+        {20, 40},
+        {25, 60},
+        {30, 90},
+        {40, 120},
+        {50, 150},
+        {60, 200},
+        {75, 300},
+        {90, 400},
+        {100, 500},
+        {110, 600},
+        {120, 700},
+        {130, 800},
+        {140, 1000},
+        {150, 1200},
+        {160, 1400},
+        {170, 1600},
+        {180, 1800},
+        {190, 2000},
+        {200, 2200},
+        {220, 2500},
+        {250, 3000}
+    };
+
+    for (int[] testCase : testCases) {
+        int nodes = testCase[0];
+        int edges = testCase[1];
+        int[][] parents = new int[nodes][nodes];
+        int[][] costs = new int[nodes][nodes];
+        
+        long start, end, avg = 0;
+        graphGenerator(nodes, edges);
+
+        // Bellman-Ford
+        for (int i = 0; i < 10; i++) {
+            start = System.nanoTime();
+            Graph graph = new Graph("temp.txt");
+            for (int j = 0; j < graph.Size(); j++) {
+                int[] singleParents = new int[graph.Size()];
+                int[] singleCosts = new int[graph.Size()];
+                graph.BellmanFord(graph.getVertices().get(j), singleParents, singleCosts);
+                for (int k = 0; k < graph.Size(); k++) {
+                    parents[j][k] = singleParents[k];
+                    costs[j][k] = singleCosts[k];
+                }
+            }
+            end = System.nanoTime();
+            avg += (end - start) / 1000;
+        }
+        System.out.println("Average time for " + nodes + " nodes and " + edges + " edges by Bellman-Ford: " + avg / 10 + " microseconds");
+        
+        // Dijkstra
+        avg = 0;
+        for (int i = 0; i < 10; i++) {
+            start = System.nanoTime();
+            Graph graph = new Graph("temp.txt");
+            for (int j = 0; j < graph.Size(); j++) {
+                int[] singleParents = new int[graph.Size()];
+                int[] singleCosts = new int[graph.Size()];
+                graph.Dijekstra(graph.getVertices().get(j), singleParents, singleCosts);
+                for (int k = 0; k < graph.Size(); k++) {
+                    parents[j][k] = singleParents[k];
+                    costs[j][k] = singleCosts[k];
+                }
+            }
+            end = System.nanoTime();
+            avg += (end - start) / 1000;
+        }
+        System.out.println("Average time for " + nodes + " nodes and " + edges + " edges by Dijkstra: " + avg / 10 + " microseconds");
+
+        // Floyd-Warshall
+        avg = 0;
+        for (int i = 0; i < 10; i++) {
+            start = System.nanoTime();
+            Graph graph = new Graph("temp.txt");
+            graph.FloydWarshall(parents, costs);
+            end = System.nanoTime();
+            avg += (end - start) / 1000;
+        }
+        System.out.println("Average time for " + nodes + " nodes and " + edges + " edges by Floyd-Warshall: " + avg / 10 + " microseconds");
+    }
+}
+
+    
 }

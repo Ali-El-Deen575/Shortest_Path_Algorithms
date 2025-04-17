@@ -172,7 +172,7 @@ public class DijekstraTest {
     // @Test
     // public void testNegativeHardVersion() throws IOException {
     
-    //     String filePath = "C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\ShortestPathAlgorithms'\\resources\\negativeHardVersion.txt"; 
+    //     String filePath = "ShortestPathAlgorithms'\\resources\\negativeHardVersion.txt"; 
     //     Graph graph = new Graph(filePath);
 
       
@@ -210,7 +210,7 @@ public class DijekstraTest {
     // @Test
     // public void multipleEdges() throws IOException {
     
-    //     String filePath = "C:\\Users\\DELL\\lab 2 DSA\\Shortest_Path_Algorithms\\ShortestPathAlgorithms'\\resources\\multipleEdges.txt"; 
+    //     String filePath = "ShortestPathAlgorithms'\\resources\\multipleEdges.txt"; 
     //     Graph graph = new Graph(filePath);
 
       
