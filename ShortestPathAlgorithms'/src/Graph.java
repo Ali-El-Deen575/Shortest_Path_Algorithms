@@ -66,11 +66,6 @@ public class Graph {
             }
             settledNodes.add(currentNode);
         }
-
-        for (int i = 0; i < vertices.size(); i++) {
-            System.out.println("Vertex: " + i + ", Cost: " + costs[i] + ", Precedence: " +
-                    (parents[i] != -1 ? parents[i] : "None"));
-        }
     }
 
     public boolean BellmanFord(Vertex source, int[] parents, int[] costs) {
