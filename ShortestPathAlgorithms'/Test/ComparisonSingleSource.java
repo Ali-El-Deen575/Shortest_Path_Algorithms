@@ -1,16 +1,15 @@
 package Test;
-
-import src.*;
-import org.junit.jupiter.api.Test;
-
-
 import java.io.IOException;
-
 import java.io.PrintWriter;
 import java.util.Random;
 
-public class ComparisonAllPaths {
-    public void graphGenerator(int nodes, int edges){
+import org.junit.jupiter.api.Test;
+
+import src.Graph;
+import src.Vertex;
+
+public class ComparisonSingleSource {
+   public void graphGenerator(int nodes, int edges){
         Random random = new Random();
         try {
             PrintWriter writer = new PrintWriter("temp.txt", "UTF-8");
@@ -34,49 +33,43 @@ public class ComparisonAllPaths {
     /*===============================================================================================================*/
     @Test
     public void test_10_10() throws IOException {
+        int[] parentss = new int[10];
+        int[] costss = new int[10];
+        Random random = new Random();
+        int src = random.nextInt(10);
+        long start,end,avg = 0;
+        graphGenerator(10, 10);
+        
         int[][] parents = new int[10][10];
         int[][] costs = new int[10][10];
         
-        long start,end,avg = 0;
-        graphGenerator(10, 10);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }           
+            
+      
         System.out.println("Average time for 10 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            }   
         System.out.println("Average time for 10 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
+        
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");     
@@ -91,45 +84,35 @@ public class ComparisonAllPaths {
     public void test_10_100() throws IOException {
         int[][] parents = new int[10][10];
         int[][] costs = new int[10][10];
+        int[] parentss = new int[10];
+        int[] costss = new int[10];
+        Random random = new Random();
+        int src = random.nextInt(10);
         
         long start,end,avg = 0;
         graphGenerator(10, 100);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 10 nodes and 100 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            } 
         System.out.println("Average time for 10 nodes and 100 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -145,45 +128,35 @@ public class ComparisonAllPaths {
     public void test_10_1000() throws IOException {
        int[][] parents = new int[10][10];
         int[][] costs = new int[10][10];
+        int[] parentss = new int[10];
+        int[] costss = new int[10];
+        Random random = new Random();
+        int src = random.nextInt(10);
         
         long start,end,avg = 0;
         graphGenerator(10, 1000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 10 nodes and 1000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            } 
         System.out.println("Average time for 10 nodes and 1000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -199,45 +172,35 @@ public class ComparisonAllPaths {
     public void test_10_10000() throws IOException {
         int[][] parents = new int[10][10];
         int[][] costs = new int[10][10];
+        int[] parentss = new int[10];
+        int[] costss = new int[10];
+        Random random = new Random();
+        int src = random.nextInt(10);
         
         long start,end,avg = 0;
         graphGenerator(10, 10000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 10 nodes and 10000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            }  
         System.out.println("Average time for 10 nodes and 10000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -253,45 +216,35 @@ public class ComparisonAllPaths {
     public void test_10_100000() throws IOException {
         int[][] parents = new int[10][10];
         int[][] costs = new int[10][10];
+        int[] parentss = new int[10];
+        int[] costss = new int[10];
+        Random random = new Random();
+        int src = random.nextInt(10);
         
         long start,end,avg = 0;
         graphGenerator(10, 100000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 10 nodes and 100000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            }  
         System.out.println("Average time for 10 nodes and 100000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -312,45 +265,35 @@ public class ComparisonAllPaths {
     public void test_100_10() throws IOException {
         int[][] parents = new int[100][100];
         int[][] costs = new int[100][100];
+        int[] parentss = new int[100];
+        int[] costss = new int[100];
+        Random random = new Random();
+        int src = random.nextInt(100);
         
         long start,end,avg = 0;
         graphGenerator(100, 10);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 100 nodes and 10 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            } 
         System.out.println("Average time for 100 nodes and 10 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -366,45 +309,35 @@ public class ComparisonAllPaths {
     public void test_100_100() throws IOException {
         int[][] parents = new int[100][100];
         int[][] costs = new int[100][100];
+        int[] parentss = new int[100];
+        int[] costss = new int[100];
+        Random random = new Random();
+        int src = random.nextInt(100);
         
         long start,end,avg = 0;
         graphGenerator(100, 100);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 100 nodes and 100 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            }   
         System.out.println("Average time for 100 nodes and 100 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -420,45 +353,35 @@ public class ComparisonAllPaths {
     public void test_100_1000() throws IOException {
         int[][] parents = new int[100][100];
         int[][] costs = new int[100][100];
+        int[] parentss = new int[100];
+        int[] costss = new int[100];
+        Random random = new Random();
+        int src = random.nextInt(100);
         
         long start,end,avg = 0;
         graphGenerator(100, 1000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 100 nodes and 1000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            }  
         System.out.println("Average time for 100 nodes and 1000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -474,45 +397,35 @@ public class ComparisonAllPaths {
     public void test_100_10000() throws IOException {
         int[][] parents = new int[100][100];
         int[][] costs = new int[100][100];
+        int[] parentss = new int[100];
+        int[] costss = new int[100];
+        Random random = new Random();
+        int src = random.nextInt(100);
         
         long start,end,avg = 0;
         graphGenerator(100, 10000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 100 nodes and 10000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            } 
         System.out.println("Average time for 100 nodes and 10000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -528,45 +441,35 @@ public class ComparisonAllPaths {
     public void test_100_100000() throws IOException {
         int[][] parents = new int[100][100];
         int[][] costs = new int[100][100];
+        int[] parentss = new int[100];
+        int[] costss = new int[100];
+        Random random = new Random();
+        int src = random.nextInt(100);
         
         long start,end,avg = 0;
         graphGenerator(100, 100000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 100 nodes and 100000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            }  
         System.out.println("Average time for 100 nodes and 100000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -585,45 +488,35 @@ public class ComparisonAllPaths {
     public void test_1000_100() throws IOException {
         int[][] parents = new int[1000][1000];
         int[][] costs = new int[1000][1000];
+        int[] parentss = new int[1000];
+        int[] costss = new int[1000];
+        Random random = new Random();
+        int src = random.nextInt(1000);
         
         long start,end,avg = 0;
         graphGenerator(1000, 100);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 1000 nodes and 100 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            }    
         System.out.println("Average time for 1000 nodes and 100 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -639,45 +532,35 @@ public class ComparisonAllPaths {
     public void test_1000_1000() throws IOException {
         int[][] parents = new int[1000][1000];
         int[][] costs = new int[1000][1000];
+        int[] parentss = new int[1000];
+        int[] costss = new int[1000];
+        Random random = new Random();
+        int src = random.nextInt(1000);
         
         long start,end,avg = 0;
         graphGenerator(1000, 1000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 1000 nodes and 1000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            }   
         System.out.println("Average time for 1000 nodes and 1000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -693,45 +576,35 @@ public class ComparisonAllPaths {
     public void test_1000_10000() throws IOException {
         int[][] parents = new int[1000][1000];
         int[][] costs = new int[1000][1000];
+        int[] parentss = new int[1000];
+        int[] costss = new int[1000];
+        Random random = new Random();
+        int src = random.nextInt(1000);
         
         long start,end,avg = 0;
         graphGenerator(1000, 10000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 1000 nodes and 10000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            }   
         System.out.println("Average time for 1000 nodes and 10000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -747,45 +620,35 @@ public class ComparisonAllPaths {
     public void test_1000_100000() throws IOException {
         int[][] parents = new int[1000][1000];
         int[][] costs = new int[1000][1000];
+        int[] parentss = new int[1000];
+        int[] costss = new int[1000];
+        Random random = new Random();
+        int src = random.nextInt(1000);
         
         long start,end,avg = 0;
         graphGenerator(1000, 100000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 1000 nodes and 100000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            }    
         System.out.println("Average time for 1000 nodes and 100000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -801,45 +664,35 @@ public class ComparisonAllPaths {
     public void test_1000_1000000() throws IOException {
         int[][] parents = new int[1000][1000];
         int[][] costs = new int[1000][1000];
+        int[] parentss = new int[1000];
+        int[] costss = new int[1000];
+        Random random = new Random();
+        int src = random.nextInt(1000);
         
         long start,end,avg = 0;
         graphGenerator(1000, 1000000);
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }
+            }
         System.out.println("Average time for 1000 nodes and 1000000 edges by Bellman Ford: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-     
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(i), singleParents, singleCosts);
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
                 
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }           
             end = System.nanoTime();
             avg += (end-start)/1000;
-        }   
+            }  
         System.out.println("Average time for 1000 nodes and 1000000 edges by Dijkstra: " + avg/10 + " microseconds");
         avg = 0;
         for(int i=0;i<10;i++){            
@@ -885,45 +738,38 @@ public void test_multiple_combinations() throws IOException {
         int edges = testCase[1];
         int[][] parents = new int[nodes][nodes];
         int[][] costs = new int[nodes][nodes];
-        
+        int[] parentss = new int[nodes];
+        int[] costss = new int[nodes];
+        Random random = new Random();
+        int src = random.nextInt(nodes);
         long start, end, avg = 0;
         graphGenerator(nodes, edges);
 
         // Bellman-Ford
-        for (int i = 0; i < 10; i++) {
+        for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.BellmanFord(graph.getVertices().get(j), singleParents, singleCosts);
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }
+            Vertex source = graph.getVertices().get(src);
+
+            graph.BellmanFord(source, parentss, costss);
+                
             end = System.nanoTime();
-            avg += (end - start) / 1000;
-        }
+            avg += (end-start)/1000;
+            }
         System.out.println("Average time for " + nodes + " nodes and " + edges + " edges by Bellman-Ford: " + avg / 10 + " microseconds");
         
         // Dijkstra
         avg = 0;
-        for (int i = 0; i < 10; i++) {
+        for(int i=0;i<10;i++){            
             start = System.nanoTime();
             Graph graph = new Graph("temp.txt");
-            for (int j = 0; j < graph.Size(); j++) {
-                int[] singleParents = new int[graph.Size()];
-                int[] singleCosts = new int[graph.Size()];
-                graph.Dijekstra(graph.getVertices().get(j), singleParents, singleCosts);
-                for (int k = 0; k < graph.Size(); k++) {
-                    parents[j][k] = singleParents[k];
-                    costs[j][k] = singleCosts[k];
-                }
-            }
+            Vertex source = graph.getVertices().get(src);
+
+             graph.Dijekstra(source, parentss, costss);
+                
             end = System.nanoTime();
-            avg += (end - start) / 1000;
-        }
+            avg += (end-start)/1000;
+            } 
         System.out.println("Average time for " + nodes + " nodes and " + edges + " edges by Dijkstra: " + avg / 10 + " microseconds");
 
         // Floyd-Warshall
@@ -938,6 +784,4 @@ public void test_multiple_combinations() throws IOException {
         System.out.println("Average time for " + nodes + " nodes and " + edges + " edges by Floyd-Warshall: " + avg / 10 + " microseconds");
     }
 }
-
-    
 }
