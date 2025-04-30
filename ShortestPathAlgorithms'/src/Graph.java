@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Graph {
     private List<Vertex> vertices = new ArrayList<>();
-    private List<int[]> edges = new ArrayList<>(); // List to store edges as [source, destination, weight]
+    private List<int[]> edges = new ArrayList<>(); 
 
     public Graph(String filePath) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {

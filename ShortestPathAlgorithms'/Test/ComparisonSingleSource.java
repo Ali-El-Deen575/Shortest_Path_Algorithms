@@ -782,6 +782,7 @@ public void test_multiple_combinations() throws IOException {
             avg += (end - start) / 1000;
         }
         System.out.println("Average time for " + nodes + " nodes and " + edges + " edges by Floyd-Warshall: " + avg / 10 + " microseconds");
+        System.out.println("--------------------------------------------------");
     }
 }
 }
