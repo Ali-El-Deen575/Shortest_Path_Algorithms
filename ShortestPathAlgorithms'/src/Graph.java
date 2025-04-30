@@ -6,35 +6,39 @@ import java.io.IOException;
 import java.util.*;
 
 public class Graph {
-    private List<Vertex> vertices = new ArrayList<>(); 
+    private List<Vertex> vertices = new ArrayList<>();
+    private List<int[]> edges = new ArrayList<>(); // List to store edges as [source, destination, weight]
 
     public Graph(String filePath) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String[] firstLine = br.readLine().split(" ");
-            int V = Integer.parseInt(firstLine[0]); 
-            int E = Integer.parseInt(firstLine[1]); 
+            int V = Integer.parseInt(firstLine[0]);
+            int E = Integer.parseInt(firstLine[1]);
 
             for (int i = 0; i < V; i++) {
-                Vertex vertex = new Vertex(String.valueOf(i)); 
+                Vertex vertex = new Vertex(String.valueOf(i));
                 vertices.add(vertex);
             }
 
             for (int e = 0; e < E; e++) {
                 String[] edgeLine = br.readLine().split(" ");
-                int i = Integer.parseInt(edgeLine[0]); 
-                int j = Integer.parseInt(edgeLine[1]); 
-                int w = Integer.parseInt(edgeLine[2]); 
+                int source = Integer.parseInt(edgeLine[0]);
+                int destination = Integer.parseInt(edgeLine[1]);
+                int weight = Integer.parseInt(edgeLine[2]);
 
-                Vertex source = vertices.get(i);
-                Vertex destination = vertices.get(j);
+              
+                Vertex srcVertex = vertices.get(source);
+                Vertex destVertex = vertices.get(destination);
+                srcVertex.addDestination(destVertex, weight);
 
-                source.addDestination(destination, w);
+
+                edges.add(new int[]{source, destination, weight});
             }
         }
     }
 
     public int Size() {
-        return vertices.size(); 
+        return vertices.size();
     }
 
     public void Dijekstra(Vertex source, int[] parents, int[] costs) {
@@ -69,39 +73,35 @@ public class Graph {
     }
 
     public boolean BellmanFord(Vertex source, int[] parents, int[] costs) {
-        Arrays.fill(costs, Integer.MAX_VALUE); 
-        Arrays.fill(parents, -1); 
-        costs[getVertexIndex(source)] = 0; 
+        Arrays.fill(costs, Integer.MAX_VALUE);
+        Arrays.fill(parents, -1);
+        costs[getVertexIndex(source)] = 0;
 
         int V = vertices.size();
 
+   
         for (int i = 0; i < V - 1; i++) {
-            for (Vertex u : vertices) {
-                for (Map.Entry<Vertex, Integer> adjacencyPair : u.getAdjacentNodes().entrySet()) {
-                    Vertex v = adjacencyPair.getKey();
-                    int weight = adjacencyPair.getValue();
+            for (int[] edge : edges) {
+                int u = edge[0]; 
+                int v = edge[1]; 
+                int weight = edge[2]; 
 
-                    if (costs[getVertexIndex(u)] != Integer.MAX_VALUE && 
-                        costs[getVertexIndex(u)] + weight < costs[getVertexIndex(v)]) {
-                        costs[getVertexIndex(v)] = costs[getVertexIndex(u)] + weight;
-                        parents[getVertexIndex(v)] = getVertexIndex(u);
-                    }
+                if (costs[u] != Integer.MAX_VALUE && costs[u] + weight < costs[v]) {
+                    costs[v] = costs[u] + weight;
+                    parents[v] = u;
                 }
             }
         }
+  
+        for (int[] edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            int weight = edge[2];
 
-        for (Vertex u : vertices) {
-            for (Map.Entry<Vertex, Integer> adjacencyPair : u.getAdjacentNodes().entrySet()) {
-                Vertex v = adjacencyPair.getKey();
-                int weight = adjacencyPair.getValue();
-
-                if (costs[getVertexIndex(u)] != Integer.MAX_VALUE && 
-                    costs[getVertexIndex(u)] + weight < costs[getVertexIndex(v)]) {
-                    return false;
-                }
+            if (costs[u] != Integer.MAX_VALUE && costs[u] + weight < costs[v]) {
+                return false; 
             }
         }
-
         return true;
     }
 
@@ -180,6 +180,10 @@ public class Graph {
     }
     public List<Vertex> getVertices() {
         return vertices;
+    }
+
+    public List<int[]> getEdges() {
+        return edges;
     }
 
     public List<Integer> getPath(int source, int destination, int[] parents) {
