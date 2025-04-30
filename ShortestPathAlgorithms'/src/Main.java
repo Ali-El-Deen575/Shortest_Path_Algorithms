@@ -201,7 +201,10 @@ public class Main {
             case 1:
                 int[] parents = new int[graph.Size()];
                 int[] costs = new int[graph.Size()];
-                success = graph.BellmanFord(graph.getVertices().get(0), parents, costs);
+                for(int i = 0; i < graph.Size(); i++) {
+                    success = graph.BellmanFord(graph.getVertices().get(i), parents, costs);
+                   if(!success) break;
+                }
                 break;
             case 2:
                 int[][] allParents = new int[graph.Size()][graph.Size()];

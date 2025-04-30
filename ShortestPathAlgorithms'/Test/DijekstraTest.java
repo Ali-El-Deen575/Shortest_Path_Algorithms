@@ -169,25 +169,7 @@ public class DijekstraTest {
         assertEquals(3, costs[5], "Costs array does not match expected values");
         assertEquals(ans, path, "Parents array does not match expected values");
     }
-    // @Test
-    // public void testNegativeHardVersion() throws IOException {
-    
-    //     String filePath = "ShortestPathAlgorithms'\\resources\\negativeHardVersion.txt"; 
-    //     Graph graph = new Graph(filePath);
 
-      
-    //     int[] parents = new int[graph.Size()];
-    //     int[] costs = new int[graph.Size()];
-
-
-    //     Vertex source = graph.getVertices().get(0);
-    //     graph.Dijekstra(source, parents, costs);
-        
-    //     List<Integer> ans = new ArrayList<>(Arrays.asList(0,2,3,1,4,5));
-    //     List<Integer> path = graph.getPath(0,5,parents);
-    //     assertEquals(3, costs[5], "Costs array does not match expected values");
-    //     assertEquals(ans, path, "Parents array does not match expected values");
-    // }
     @Test
     public void oneNode() throws IOException {
     
@@ -207,25 +189,7 @@ public class DijekstraTest {
         assertEquals(0, costs[0], "Costs array does not match expected values");
         assertEquals(ans, path, "Parents array does not match expected values");
     }
-    // @Test
-    // public void multipleEdges() throws IOException {
-    
-    //     String filePath = "ShortestPathAlgorithms'\\resources\\multipleEdges.txt"; 
-    //     Graph graph = new Graph(filePath);
 
-      
-    //     int[] parents = new int[graph.Size()];
-    //     int[] costs = new int[graph.Size()];
-
-
-    //     Vertex source = graph.getVertices().get(0);
-    //     graph.Dijekstra(source, parents, costs);
-        
-    //     List<Integer> ans = new ArrayList<>(Arrays.asList(0,1));
-    //     List<Integer> path = graph.getPath(0,1,parents);
-    //     assertEquals(1, costs[1], "Costs array does not match expected values");
-    //     assertEquals(ans, path, "Parents array does not match expected values");
-    // }
     @Test
     public void GiganticPathOneHighDensity() throws IOException {
     
